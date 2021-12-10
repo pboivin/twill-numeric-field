@@ -30,6 +30,8 @@ import InputframeMixin from '@/mixins/inputFrame'
 
 import VueNumeric from 'vue-numeric'
 
+import { hello } from './TwillNumericInput/utils'
+
 export default {
     mixins: [InputMixin, InputframeMixin, FormStoreMixin],
 
@@ -88,6 +90,10 @@ export default {
             this.updateValue(newValue)
         },
     },
+
+    mounted() {
+        hello()
+    }
 }
 </script>
 
