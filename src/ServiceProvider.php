@@ -24,7 +24,7 @@ class ServiceProvider extends BaseServiceProvider
         $this->loadViewsFrom($path, 'twill-numeric-input');
 
         $this->publishes(
-            [$path => resource_path('views/vendor/twill-numeric')],
+            [$path => resource_path('views/vendor/twill-numeric-input')],
             'views'
         );
     }
