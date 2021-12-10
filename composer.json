@@ -1,0 +1,29 @@
+{
+    "name": "pboivin/twill-numeric-input",
+    "authors": [
+        {
+            "name": "Patrick Boivin",
+            "email": "pboivin@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "area17/twill": "^2.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "PBoivin\\TwillNumericInput\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PBoivin\\TwillNumericInput\\ServiceProvider"
+            ]
+        }
+    }
+}
