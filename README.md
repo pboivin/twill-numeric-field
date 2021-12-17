@@ -27,10 +27,21 @@ php artisan twill:build
 
 ## Usage
 
+Form field:
 ```
     @formField('twill-numeric-input::field', [
         'name' => 'price',
         'label' => 'Price',
         'thousandSeparator' => ',',
     ])
+```
+
+Block:
+```
+    @formField('block_editor', ['blocks' => ['number-list']])
+```
+
+Repeater:
+```
+    @formField('repeater', ['type' => 'number-item'])
 ```
