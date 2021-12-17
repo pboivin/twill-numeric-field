@@ -2,19 +2,23 @@
 
 namespace PBoivin\TwillNumericInput;
 
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use A17\Twill\PackageServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+class ServiceProvider extends PackageServiceProvider
 {
     public function register()
     {
+        $this->registerVueComponentsDirectory(__DIR__ . '/../resources/assets/js/components');
+
+        $this->registerBlocksDirectory(__DIR__ . '/../resources/views/admin/blocks');
+
+        $this->registerRepeatersDirectory(__DIR__ . '/../resources/views/admin/repeaters');
+
+        $this->loadViews();
     }
 
     public function boot()
     {
-        $this->loadViews();
-
-        $this->publishAssets();
     }
 
     private function loadViews()
@@ -26,16 +30,6 @@ class ServiceProvider extends BaseServiceProvider
         $this->publishes(
             [$path => resource_path('views/vendor/twill-numeric-input')],
             'views'
-        );
-    }
-
-    private function publishAssets()
-    {
-        $path = __DIR__ . '/../resources/assets/js/components';
-
-        $this->publishes(
-            [$path => resource_path(config('twill.vendor_components_resource_path'))],
-            'components'
         );
     }
 }
